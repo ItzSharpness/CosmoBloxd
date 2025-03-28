@@ -1,0 +1,46 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+}
+
+/* Barre latérale */
+.sidebar {
+    width: 80px;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar .logo {
+    font-size: 30px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.sidebar .logo:hover {
+    transform: scale(1.2);
+}
+
+/* Contenu principal */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titres */
+h1 {
+    font-size: 36px;
+}
