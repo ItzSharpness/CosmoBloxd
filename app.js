@@ -121,6 +121,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+        // Lors de l'ajout d'un cosmétique, on doit ajouter la catégorie à chaque objet
+const form = document.getElementById("cosmetic-form");
+
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Récupérer les valeurs du formulaire
+        const name = document.getElementById("cosmetic-name").value;
+        const type = document.getElementById("cosmetic-type").value;
+        const price = document.getElementById("cosmetic-price").value;
+        const rarity = document.getElementById("cosmetic-rarity").value;
+        const category = document.getElementById("cosmetic-category").value; // Ajouter une catégorie (cape, aura, etc.)
+
+        // Créer un objet cosmétique
+        const cosmetic = { name, type, price, rarity, category };
+
+        // Récupérer les cosmétiques existants
+        let cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
+        cosmetics.push(cosmetic);
+
+        // Sauvegarder en LocalStorage
+        localStorage.setItem("cosmetics", JSON.stringify(cosmetics));
+
+        // Rediriger vers la page principale
+        window.location.href = "index.html";
+    });
+}
+        
         
     }
 });
