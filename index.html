@@ -23,16 +23,21 @@
             <p>Choisis un cosmétique dans la barre latérale !</p>
         </div>
     </div>
-    <div id="login-form">
-    <h2>Se connecter</h2>
-    <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur" />
-    <button onclick="login()">Se connecter</button>
-</div>
 
-<div id="user-info" style="display: none;">
-    <h2>Bienvenue, <span id="user-name"></span></h2>
-    <button onclick="logout()">Se déconnecter</button>
-</div>
-    
+    <!-- Formulaire de connexion -->
+    <div id="login-form">
+        <h2>Se connecter</h2>
+        <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur" />
+        <button onclick="login()">Se connecter</button>
+    </div>
+
+    <!-- Informations utilisateur après connexion -->
+    <div id="user-info" style="display: none;">
+        <h2>Bienvenue, <span id="user-name"></span></h2>
+        <button onclick="logout()">Se déconnecter</button>
+    </div>
+
+    <!-- Ajout du fichier JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
