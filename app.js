@@ -86,5 +86,41 @@ document.addEventListener("DOMContentLoaded", function () {
             
             container.appendChild(div);
         });
+        // Affichage des cosmétiques sur la page de chaque catégorie
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("cosmetic-list");
+    if (container) {
+        let cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
+
+        // Récupérer la catégorie de la page actuelle (par exemple 'cape', 'animal', etc.)
+        const category = window.location.pathname.split("/").pop().split(".")[0]; // Extrait 'cape', 'animal', etc.
+
+        // Filtrer les cosmétiques en fonction de la catégorie
+        const filteredCosmetics = cosmetics.filter(cosmetic => cosmetic.type.toLowerCase() === category);
+
+        filteredCosmetics.forEach(cosmetic => {
+            let div = document.createElement("div");
+
+            // Définir la couleur selon la rareté
+            let rarityColors = {
+                "Legendary": "#FFA500",    // Orange
+                "Ultra-Rare": "#8A2BE2",  // Violet
+                "Rare": "#1E90FF",        // Bleu
+                "Commune": "#32CD32",     // Vert
+                "Basic": "#A9A9A9"        // Gris
+            };
+
+            div.innerHTML = `<p>
+                <strong>${cosmetic.name}</strong> - ${cosmetic.type} - ${cosmetic.price} écus - 
+                <span style="color: ${rarityColors[cosmetic.rarity]}; font-weight: bold;">
+                    ${cosmetic.rarity}
+                </span>
+            </p>`;
+
+            container.appendChild(div);
+        });
+    }
+});
+        
     }
 });
