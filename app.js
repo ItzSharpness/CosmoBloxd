@@ -30,9 +30,10 @@ window.onload = function() {
         document.getElementById('login-form').style.display = 'none';
         document.getElementById('user-info').style.display = 'block';
     }
-    // Fonction pour afficher le formulaire de connexion
+};
+
+// Fonction pour afficher le formulaire de connexion
 function showLoginForm() {
     document.getElementById('login-form').style.display = 'block';
     document.getElementById('user-info').style.display = 'none';
 }
-};
