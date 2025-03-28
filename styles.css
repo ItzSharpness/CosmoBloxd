@@ -20,17 +20,28 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    border-right: 2px solid #444; /* Ajoute une bordure pour délimiter */
 }
 
+/* Logos (ajout d'un effet cubique) */
 .sidebar .logo {
+    width: 60px;              /* Largeur du logo */
+    height: 60px;             /* Hauteur du logo */
+    background-color: #333;   /* Fond sombre pour chaque logo */
+    display: flex;
+    justify-content: center;  /* Centrer le contenu horizontalement */
+    align-items: center;      /* Centrer le contenu verticalement */
     font-size: 30px;
     margin: 20px 0;
     cursor: pointer;
-    transition: transform 0.3s;
+    border-radius: 10px;      /* Coins arrondis pour un effet plus doux */
+    transition: transform 0.3s, background-color 0.3s;
 }
 
+/* Au survol du logo */
 .sidebar .logo:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);         /* Agrandissement au survol */
+    background-color: #555;        /* Changement de couleur pour un effet visuel */
 }
 
 /* Contenu principal */
