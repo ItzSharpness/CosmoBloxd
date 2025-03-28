@@ -80,3 +80,17 @@ h1 {
         font-size: 28px; /* Réduit la taille du titre sur mobile */
     }
 }
+/* Emoji de connexion */
+#connect-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;           /* Taille de l'emoji */
+    cursor: pointer;          /* Affiche une main quand on survole */
+    transition: transform 0.3s; /* Animation au survol */
+}
+
+/* Effet au survol de l'emoji */
+#connect-icon:hover {
+    transform: scale(1.2);     /* Agrandissement au survol */
+}
