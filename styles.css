@@ -21,9 +21,10 @@ body {
     align-items: center;
     padding-top: 20px;
     border-right: 2px solid #444; /* Ajoute une bordure pour délimiter */
+    box-sizing: border-box;
 }
 
-/* Logos (ajout d'un effet cubique) */
+/* Logos (ajout d'un effet cubique et ombre légère) */
 .sidebar .logo {
     width: 60px;              /* Largeur du logo */
     height: 60px;             /* Hauteur du logo */
@@ -35,13 +36,15 @@ body {
     margin: 20px 0;
     cursor: pointer;
     border-radius: 10px;      /* Coins arrondis pour un effet plus doux */
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);  /* Ombre légère pour effet cubique */
 }
 
 /* Au survol du logo */
 .sidebar .logo:hover {
     transform: scale(1.1);         /* Agrandissement au survol */
     background-color: #555;        /* Changement de couleur pour un effet visuel */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ombre plus marquée au survol */
 }
 
 /* Contenu principal */
@@ -55,10 +58,25 @@ body {
 h1 {
     font-size: 36px;
 }
-#login-form {
+
+/* Formulaire et informations utilisateur */
+#login-form, #user-info {
     text-align: center;
 }
 
-#user-info {
-    text-align: center;
+/* Réactivité : ajustement de la taille pour les petits écrans */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 60px; /* Réduit la largeur de la barre latérale sur mobile */
+    }
+
+    .sidebar .logo {
+        width: 50px;
+        height: 50px;
+        font-size: 24px; /* Réduit la taille des logos */
+    }
+
+    h1 {
+        font-size: 28px; /* Réduit la taille du titre sur mobile */
+    }
 }
