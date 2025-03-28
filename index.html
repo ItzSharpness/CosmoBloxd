@@ -21,6 +21,9 @@
         <div class="content">
             <h1>Bienvenue sur CosmoBloxd</h1>
             <p>Choisis un cosmétique dans la barre latérale !</p>
+
+            <!-- Affichage des cosmétiques -->
+            <div id="cosmetic-list"></div>
         </div>
     </div>
 
@@ -37,19 +40,13 @@
         <button onclick="logout()">Se déconnecter</button>
     </div>
 
+    <!-- Emoji de connexion -->
+    <div id="connect-icon" onclick="showLoginForm()">🙇</div>
+
+    <!-- Bouton pour ajouter un cosmétique -->
+    <button id="add-cosmetic-btn" onclick="location.href='add.html'">Add Cosmétiques</button>
+
     <!-- Ajout du fichier JavaScript -->
     <script src="app.js"></script>
-    <!-- Emoji de connexion -->
-<div id="connect-icon" onclick="showLoginForm()">🙇</div>
-    <!-- Bouton pour ajouter un cosmétique -->
-<button id="add-cosmetic-btn" onclick="location.href='add.html'">Add Cosmétiques</button>
-    <label for="cosmetic-rarity">Rareté :</label>
-<select id="cosmetic-rarity" required>
-    <option value="Legendary">Legendary</option>
-    <option value="Ultra-Rare">Ultra-Rare</option>
-    <option value="Rare">Rare</option>
-    <option value="Commune">Commune</option>
-    <option value="Basic">Basic</option>
-</select>
 </body>
 </html>
