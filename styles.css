@@ -84,10 +84,15 @@ h1 {
 #connect-icon {
     position: fixed;
     top: 20px;
-    left: 20px;
-    font-size: 40px;           /* Taille de l'emoji */
-    cursor: pointer;          /* Affiche une main quand on survole */
-    transition: transform 0.3s; /* Animation au survol */
+    right: 20px; /* Déplace à droite */
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Effet au survol de l'emoji */
+#connect-icon:hover {
+    transform: scale(1.2);
 }
 
 /* Effet au survol de l'emoji */
