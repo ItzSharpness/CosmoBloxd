@@ -94,3 +94,20 @@ h1 {
 #connect-icon:hover {
     transform: scale(1.2);     /* Agrandissement au survol */
 }
+#add-cosmetic-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-cosmetic-btn:hover {
+    background-color: #218838;
+}
