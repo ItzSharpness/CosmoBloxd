@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Cosmétique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Ajouter un Cosmétique</h2>
+    <form id="cosmetic-form">
+        <input type="text" id="cosmetic-name" placeholder="Nom du cosmétique" required>
+        <select id="cosmetic-type">
+            <option value="cape">Cape</option>
+            <option value="animal">Animal</option>
+            <option value="aura">Aura</option>
+            <option value="skin">Skin</option>
+            <option value="item">Item</option>
+        </select>
+        <input type="number" id="cosmetic-price" placeholder="Prix" required>
+        <input type="text" id="cosmetic-rarity" placeholder="Rareté" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    <button onclick="location.href='index.html'">Retour</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
