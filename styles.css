@@ -116,3 +116,36 @@ h1 {
 #add-cosmetic-btn:hover {
     background-color: #218838;
 }
+/* Styles pour la barre latérale */
+.sidebar {
+    width: 60px;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin: 10px 0;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #FFA500; /* Couleur d'hover pour les icônes */
+}
+
+/* Style spécifique pour le bouton accueil */
+#home-logo a {
+    font-size: 30px;
+    color: white;
+}
+
+#home-logo a:hover {
+    color: #FFA500; /* Couleur d'hover pour le bouton accueil */
+}
+
