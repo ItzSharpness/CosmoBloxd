@@ -10,6 +10,7 @@
     <div class="container">
         <!-- Barre latérale -->
         <div class="sidebar">
+            <div class="logo" id="home-logo">🏠</div> <!-- Bouton retour à l'accueil -->
             <div class="logo" id="cape-logo"><a href="cape.html">🧥</a></div>
             <div class="logo" id="animal-logo"><a href="animal.html">🐾</a></div>
             <div class="logo" id="aura-logo"><a href="aura.html">🌟</a></div>
@@ -25,6 +26,11 @@
     </div>
 
     <script src="app.js"></script>
+    <script>
+        // Ajouter la fonctionnalité pour le bouton retour à l'accueil
+        document.getElementById('home-logo').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redirige vers la page d'accueil
+        });
+    </script>
 </body>
 </html>
-
