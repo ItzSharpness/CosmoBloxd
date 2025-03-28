@@ -149,6 +149,25 @@ if (form) {
         window.location.href = "index.html";
     });
 }
+
+        window.onload = function() {
+    // Récupérer les cosmétiques depuis localStorage
+    const cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
+
+    // Filtrer les cosmétiques selon la catégorie définie dans le data-category de la page
+    const category = document.body.dataset.category;  // Récupérer la catégorie à partir de l'attribut data-category du body
+    const filteredCosmetics = cosmetics.filter(cosmetic => cosmetic.category === category);
+
+    // Afficher les cosmétiques filtrés dans le conteneur
+    const container = document.getElementById('cosmetic-list');
+    if (container) {
+        filteredCosmetics.forEach(cosmetic => {
+            let div = document.createElement("div");
+            div.innerHTML = `<p><strong>${cosmetic.name}</strong> - ${cosmetic.type} - ${cosmetic.price} écus - Rareté : ${cosmetic.rarity}</p>`;
+            container.appendChild(div);
+        });
+    }
+};
         
         
     }
