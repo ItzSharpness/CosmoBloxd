@@ -116,3 +116,62 @@ button:hover {
 .rare { color: cyan; }
 .commune { color: green; }
 .basic { color: gray; }
+/* Conteneur des cosmétiques */
+#cosmetic-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Carte cosmétique */
+.cosmetic {
+    background: #292929;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.cosmetic:hover {
+    transform: scale(1.05);
+}
+
+/* Bouton de suppression */
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* Images */
+.cosmetic img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Rareté (couleurs personnalisées) */
+.legendary { color: gold; }
+.ultra-rare { color: #ff33cc; }
+.rare { color: cyan; }
+.commune { color: green; }
+.basic { color: gray; }
+
