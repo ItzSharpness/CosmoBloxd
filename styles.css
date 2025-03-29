@@ -4,174 +4,40 @@ body {
     background-color: #1e1e1e;
     color: white;
     text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* En-têtes */
-h1, h2 {
-    color: #ffcc00;
-}
-
-/* Formulaire */
-#cosmetic-form {
-    background: #292929;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input, select, button {
+/* Conteneur principal */
+.main-container {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: none;
-}
-
-input, select {
-    background: #333;
-    color: white;
-    outline: none;
-}
-
-button {
-    background: #ffcc00;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #e6b800;
-}
-
-/* Liste des cosmétiques */
-#cosmetic-list {
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
 }
 
-/* Carte d’un cosmétique */
-.cosmetic {
-    background: #292929;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-    position: relative;
-    text-align: center;
-}
-
-/* Bouton de suppression */
-.delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px;
+/* Conteneur de l'icône */
+.icon-container {
+    font-size: 100px;
+    font-weight: bold;
+    background-color: #292929;
     border-radius: 50%;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.delete-btn:hover {
-    background: darkred;
-}
-
-/* Images des cosmétiques */
-.cosmetic img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Rareté */
-.rarete {
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-/* Couleurs pour chaque rareté */
-.legendary { color: gold; }
-.ultra-rare { color: #ff33cc; }
-.rare { color: cyan; }
-.commune { color: green; }
-.basic { color: gray; }
-/* Conteneur des cosmétiques */
-#cosmetic-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Carte cosmétique */
-.cosmetic {
-    background: #292929;
-    padding: 15px;
-    border-radius: 10px;
-    width: 220px;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-    position: relative;
-    text-align: center;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
     transition: transform 0.3s;
 }
 
-.cosmetic:hover {
-    transform: scale(1.05);
+/* Ajout de l'animation de survol */
+.icon-container:hover {
+    transform: scale(1.1);
+    background-color: #ffcc00;
 }
 
-/* Bouton de suppression */
-.delete-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 50%;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.icon {
+    color: #ffcc00;
 }
-
-.delete-btn:hover {
-    background: darkred;
-}
-
-/* Images */
-.cosmetic img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Rareté (couleurs personnalisées) */
-.legendary { color: gold; }
-.ultra-rare { color: #ff33cc; }
-.rare { color: cyan; }
-.commune { color: green; }
-.basic { color: gray; }
-
