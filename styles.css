@@ -1,151 +1,118 @@
-/* Style général */
+/* Styles généraux */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: #1e1e1e;
     color: white;
-}
-
-/* Conteneur principal */
-.container {
-    display: flex;
-}
-
-/* Barre latérale */
-.sidebar {
-    width: 80px;
-    height: 100vh;
-    background-color: #222;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    border-right: 2px solid #444; /* Ajoute une bordure pour délimiter */
-    box-sizing: border-box;
-}
-
-/* Logos (ajout d'un effet cubique et ombre légère) */
-.sidebar .logo {
-    width: 60px;              /* Largeur du logo */
-    height: 60px;             /* Hauteur du logo */
-    background-color: #333;   /* Fond sombre pour chaque logo */
-    display: flex;
-    justify-content: center;  /* Centrer le contenu horizontalement */
-    align-items: center;      /* Centrer le contenu verticalement */
-    font-size: 30px;
-    margin: 20px 0;
-    cursor: pointer;
-    border-radius: 10px;      /* Coins arrondis pour un effet plus doux */
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);  /* Ombre légère pour effet cubique */
-}
-
-/* Au survol du logo */
-.sidebar .logo:hover {
-    transform: scale(1.1);         /* Agrandissement au survol */
-    background-color: #555;        /* Changement de couleur pour un effet visuel */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ombre plus marquée au survol */
-}
-
-/* Contenu principal */
-.content {
-    flex-grow: 1;
+    text-align: center;
     padding: 20px;
-    text-align: center;
 }
 
-/* Titres */
-h1 {
-    font-size: 36px;
+/* En-têtes */
+h1, h2 {
+    color: #ffcc00;
 }
 
-/* Formulaire et informations utilisateur */
-#login-form, #user-info {
-    text-align: center;
+/* Formulaire */
+#cosmetic-form {
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
-/* Réactivité : ajustement de la taille pour les petits écrans */
-@media (max-width: 600px) {
-    .sidebar {
-        width: 60px; /* Réduit la largeur de la barre latérale sur mobile */
-    }
-
-    .sidebar .logo {
-        width: 50px;
-        height: 50px;
-        font-size: 24px; /* Réduit la taille des logos */
-    }
-
-    h1 {
-        font-size: 28px; /* Réduit la taille du titre sur mobile */
-    }
-}
-/* Emoji de connexion */
-#connect-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px; /* Déplace à droite */
-    font-size: 40px;
-    cursor: pointer;
-    transition: transform 0.3s;
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Effet au survol de l'emoji */
-#connect-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Effet au survol de l'emoji */
-#connect-icon:hover {
-    transform: scale(1.2);     /* Agrandissement au survol */
-}
-#add-cosmetic-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: white;
-    border: none;
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     border-radius: 5px;
+    border: none;
+}
+
+input, select {
+    background: #333;
+    color: white;
+    outline: none;
+}
+
+button {
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#add-cosmetic-btn:hover {
-    background-color: #218838;
+button:hover {
+    background: #e6b800;
 }
-/* Styles pour la barre latérale */
-.sidebar {
-    width: 60px;
-    background-color: #333;
-    padding: 10px;
+
+/* Liste des cosmétiques */
+#cosmetic-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.logo {
-    margin: 10px 0;
-    font-size: 24px;
+/* Carte d’un cosmétique */
+.cosmetic {
+    background: #292929;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    position: relative;
+    text-align: center;
+}
+
+/* Bouton de suppression */
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
     color: white;
-    text-decoration: none;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-.logo:hover {
-    color: #FFA500; /* Couleur d'hover pour les icônes */
+.delete-btn:hover {
+    background: darkred;
 }
 
-/* Style spécifique pour le bouton accueil */
-#home-logo a {
-    font-size: 30px;
-    color: white;
+/* Images des cosmétiques */
+.cosmetic img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-#home-logo a:hover {
-    color: #FFA500; /* Couleur d'hover pour le bouton accueil */
+/* Rareté */
+.rarete {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
+/* Couleurs pour chaque rareté */
+.legendary { color: gold; }
+.ultra-rare { color: #ff33cc; }
+.rare { color: cyan; }
+.commune { color: green; }
+.basic { color: gray; }
