@@ -6,7 +6,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100vh; /* Assure que la page prend toute la hauteur */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,11 +14,11 @@ body {
 
 /* Conteneur principal */
 .main-container {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* Conteneur de l'icône */
@@ -30,6 +30,9 @@ body {
     padding: 50px;
     box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
     transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Ajout de l'animation de survol */
