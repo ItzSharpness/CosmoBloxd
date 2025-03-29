@@ -1,95 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("cosmetic-form");
-    const nameInput = document.getElementById("cosmetic-name");
-    const rarityInput = document.getElementById("cosmetic-rarity");
-    const priceInput = document.getElementById("cosmetic-price");
-    const imageInput = document.getElementById("cosmetic-image");
+document.getElementById("add-cosmetic").addEventListener("click", function () {
+    const name = document.getElementById("cosmetic-name").value;
+    const rarity = document.getElementById("cosmetic-rarity").value;
+    const price = document.getElementById("cosmetic-price").value;
+    const imageUrl = document.getElementById("cosmetic-image").value; // URL de l'image
+
+    if (!name || !price || isNaN(price)) {
+        alert("Veuillez entrer un nom et un prix valide !");
+        return;
+    }
+
     const cosmeticList = document.getElementById("cosmetic-list");
 
-    // Charger les cosmétiques depuis le localStorage
-    function loadCosmetics() {
-        const cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
-        cosmeticList.innerHTML = ""; // Vider la liste avant de la remplir
-        cosmetics.forEach((cosmetic, index) => {
-            createCosmeticElement(cosmetic, index);
-        });
-    }
+    const cosmeticDiv = document.createElement("div");
+    cosmeticDiv.classList.add("cosmetic");
 
-    // Créer un élément cosmétique dans la liste
-    function createCosmeticElement(cosmetic, index) {
-        const div = document.createElement("div");
-        div.classList.add("cosmetic");
-
-        // Bouton de suppression
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "✖";
-        deleteBtn.classList.add("delete-btn");
-        deleteBtn.addEventListener("click", function () {
-            removeCosmetic(index);
-        });
-
-        // Contenu du cosmétique
-        div.innerHTML = `
-            <p><strong>${cosmetic.name}</strong></p>
-            <p>Rareté : ${cosmetic.rarity}</p>
-            <p>Prix : ${cosmetic.price} 🪙</p>
-        `;
-
-        if (cosmetic.image) {
-            const img = document.createElement("img");
-            img.src = cosmetic.image;
-            div.appendChild(img);
-        }
-
-        div.appendChild(deleteBtn);
-        cosmeticList.appendChild(div);
-    }
-
-    // Ajouter un cosmétique
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const name = nameInput.value.trim();
-        const rarity = rarityInput.value;
-        const price = priceInput.value;
-        const file = imageInput.files[0];
-
-        if (!name || !price) {
-            alert("Veuillez remplir tous les champs obligatoires !");
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            const cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
-            const newCosmetic = {
-                name: name,
-                rarity: rarity,
-                price: price,
-                image: file ? event.target.result : null,
-            };
-
-            cosmetics.push(newCosmetic);
-            localStorage.setItem("cosmetics", JSON.stringify(cosmetics));
-            createCosmeticElement(newCosmetic, cosmetics.length - 1);
-            form.reset();
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-            reader.onload();
-        }
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "X";
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.addEventListener("click", function () {
+        cosmeticDiv.remove();
     });
 
-    // Supprimer un cosmétique
-    function removeCosmetic(index) {
-        let cosmetics = JSON.parse(localStorage.getItem("cosmetics")) || [];
-        cosmetics.splice(index, 1);
-        localStorage.setItem("cosmetics", JSON.stringify(cosmetics));
-        loadCosmetics();
+    const title = document.createElement("h3");
+    title.innerText = name;
+
+    const rarityText = document.createElement("p");
+    rarityText.innerText = `Rareté: ${rarity}`;
+    rarityText.classList.add(rarity.toLowerCase());
+
+    const priceText = document.createElement("p");
+    priceText.innerText = `Prix: ${price} écus 🪙`;
+
+    const image = document.createElement("img");
+    if (imageUrl) {
+        image.src = imageUrl;
+    } else {
+        image.style.display = "none"; // Cache l'image si aucune URL n'est fournie
     }
 
-    // Charger les cosmétiques au démarrage
-    loadCosmetics();
+    cosmeticDiv.appendChild(deleteBtn);
+    cosmeticDiv.appendChild(title);
+    cosmeticDiv.appendChild(rarityText);
+    cosmeticDiv.appendChild(priceText);
+    if (imageUrl) {
+        cosmeticDiv.appendChild(image);
+    }
+
+    cosmeticList.appendChild(cosmeticDiv);
+
+    // Réinitialisation des champs
+    document.getElementById("cosmetic-name").value = "";
+    document.getElementById("cosmetic-price").value = "";
+    document.getElementById("cosmetic-image").value = "";
 });
